@@ -1,0 +1,19 @@
+﻿  EnvPainter.cpp
+  gl_painter.cpp
+gl_painter.cpp(1169): warning C4838: 从“double”转换到“const GLfloat”需要收缩转换
+gl_painter.cpp(1282): warning C4838: 从“double”转换到“const GLfloat”需要收缩转换
+gl_painter.cpp(1326): warning C4838: 从“double”转换到“const GLfloat”需要收缩转换
+gl_painter.cpp(1369): warning C4838: 从“double”转换到“const GLfloat”需要收缩转换
+gl_painter.cpp(1414): warning C4838: 从“double”转换到“const GLfloat”需要收缩转换
+gl_painter.cpp(1461): warning C4838: 从“double”转换到“const GLfloat”需要收缩转换
+gl_painter.cpp(1469): warning C4838: 从“double”转换到“const GLfloat”需要收缩转换
+gl_painter.cpp(1520): warning C4838: 从“double”转换到“const GLfloat”需要收缩转换
+gl_painter.cpp(1530): warning C4838: 从“double”转换到“const GLfloat”需要收缩转换
+gl_painter.cpp(1540): warning C4838: 从“double”转换到“const GLfloat”需要收缩转换
+gl_painter.cpp(1597): warning C4838: 从“double”转换到“const GLfloat”需要收缩转换
+gl_painter.cpp(1862): warning C4838: 从“double”转换到“const GLfloat”需要收缩转换
+gl_painter.cpp(1869): warning C4838: 从“double”转换到“const GLfloat”需要收缩转换
+  gl_widget.cpp
+  正在生成代码...
+  Minecraft.vcxproj -> F:\中山大学\学习\大三上\计算机图形学\大作业\Minecraft\Win32\Debug\Minecraft.exe
+  Minecraft.vcxproj -> F:\中山大学\学习\大三上\计算机图形学\大作业\Minecraft\Win32\Debug\Minecraft.pdb (Full PDB)

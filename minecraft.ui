@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MinecraftClass</class>
+ <widget class="QMainWindow" name="MinecraftClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Minecraft</string>
+  </property>
+  <widget class="ROOT_WIDGET" name="centralWidget">
+   <widget class="GL_WIDGET" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>800</width>
+      <height>600</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="UTILS" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>60</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="action_Open"/>
+    <addaction name="separator"/>
+    <addaction name="action_Save"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="action_Open">
+   <property name="text">
+    <string>&amp;Open</string>
+   </property>
+  </action>
+  <action name="action_Save">
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>GL_WIDGET</class>
+   <extends>QWidget</extends>
+   <header>gl_widget.h</header>
+   <container>1</container>
+   <slots>
+    <slot>on_game_profile_change(QString)</slot>
+    <slot>on_resize(QSize)</slot>
+    <slot>on_game_profile_save(QString)</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>UTILS</class>
+   <extends>QWidget</extends>
+   <header>utils.h</header>
+   <container>1</container>
+   <slots>
+    <signal>_logd(QString)</signal>
+    <signal>_open_file(QString)</signal>
+    <signal>_save_file(QString)</signal>
+    <slot>open_file()</slot>
+    <slot>save_file()</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>ROOT_WIDGET</class>
+   <extends>QWidget</extends>
+   <header>root_widget.h</header>
+   <container>1</container>
+   <slots>
+    <signal>change_size(QSize)</signal>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="minecraft.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>widget_2</sender>
+   <signal>_logd(QString)</signal>
+   <receiver>statusBar</receiver>
+   <slot>showMessage(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>549</x>
+     <y>95</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>549</x>
+     <y>557</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_Open</sender>
+   <signal>triggered()</signal>
+   <receiver>widget_2</receiver>
+   <slot>open_file()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>544</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>centralWidget</sender>
+   <signal>change_size(QSize)</signal>
+   <receiver>widget</receiver>
+   <slot>on_resize(QSize)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>304</x>
+     <y>280</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>249</x>
+     <y>275</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_Save</sender>
+   <signal>triggered()</signal>
+   <receiver>widget_2</receiver>
+   <slot>save_file()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>544</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>widget_2</sender>
+   <signal>_open_file(QString)</signal>
+   <receiver>widget</receiver>
+   <slot>on_game_profile_change(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>548</x>
+     <y>92</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>497</x>
+     <y>92</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>widget_2</sender>
+   <signal>_save_file(QString)</signal>
+   <receiver>widget</receiver>
+   <slot>on_game_profile_save(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>567</x>
+     <y>122</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>123</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>_logd(QString)</slot>
+ </slots>
+</ui>
